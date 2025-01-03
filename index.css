@@ -52,7 +52,7 @@ strong {
 }
 
 s {
-  border-radius: 50%;
+  border-radius: 48%;
   border: 1px solid red;
   padding: 0 0.2em;
   position: relative;
