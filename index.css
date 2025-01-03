@@ -13,6 +13,15 @@ blockquote {
   padding: 0.5em 1em;
 }
 
+input {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #888;
+  font-family: "Kalam", serif;
+  font-size: 1.2em;
+  padding: 0.1em;
+}
+
 table {
   border-collapse: collapse;
 }
