@@ -52,11 +52,11 @@ strong {
 }
 
 s {
-  position: relative;
-  padding: 0 0.2em;
-  text-decoration: none;
-  border: 1px solid red;
   border-radius: 50%;
+  border: 1px solid red;
+  padding: 0 0.2em;
+  position: relative;
+  text-decoration: none;
 }
 
 em {
