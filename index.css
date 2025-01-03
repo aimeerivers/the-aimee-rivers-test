@@ -39,8 +39,38 @@ td[colspan="2"] {
   text-align: left;
 }
 
+bold {
+  border-top: 1px solid black;
+  color: mediumblue;
+  font-weight: bold;
+}
+
 strong {
   border-top: 1px solid black;
+  color: green;
+  font-weight: bold;
+}
+
+s {
+  position: relative;
+  padding: 0 0.2em;
+  text-decoration: none;
+}
+
+em {
+  color: mediumblue;
+  font-style: normal;
+}
+
+s::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(15deg, transparent, red, transparent);
+  transform: translateY(-50%) rotate(-25deg);
 }
 
 #maths {

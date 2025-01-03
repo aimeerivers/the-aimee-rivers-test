@@ -14,7 +14,6 @@ function calculate() {
   let length = number.length;
 
   while (length >= 11) {
-    addRowToTable(workingOut, "Take the 10,000,000,000s, multiply by 19, and add to the rest.");
     let head = number.slice(0, length - 10);
     let tail = number.slice(length - 10);
 
@@ -22,11 +21,11 @@ function calculate() {
     number = (Number(tail) + toAdd).toString();
     length = number.length;
 
-    addRowToTable(workingOut, `${head}<br>x 19<br><strong>${toAdd}</strong>`, `${tail}<br>+ ${toAdd}<br><strong>${number}</strong>`);
+    addRowToTable(workingOut, `Take the 10,000,000,000s, multiply by 19, and add to the rest.<br><s>${head}</s>${tail}`);
+    addRowToTable(workingOut, `${head}<br>x 19<br><bold>${toAdd}</bold>`, `${tail}<br><em>+ ${toAdd}</em><br><strong>${number}</strong>`);
   }
 
   while (length > 5) {
-    addRowToTable(workingOut, "Multiply the units by 2556 and subtract.");
     let head = number.slice(0, length - 1);
     let tail = number.slice(length - 1);
 
@@ -34,7 +33,8 @@ function calculate() {
     number = (Number(head) - toSubtract).toString();
     length = number.length;
 
-    addRowToTable(workingOut, `${tail}<br>x 2556<br><strong>${toSubtract}</strong>`, `${head}<br>- ${toSubtract}<br><strong>${number}</strong>`);
+    addRowToTable(workingOut, `Multiply the units by 2556 and subtract.<br>${head}<s>${tail}</s>`);
+    addRowToTable(workingOut, `${tail}<br>x 2556<br><strong>${toSubtract}</strong>`, `${head}<br><em>- ${toSubtract}</em><br><strong>${number}</strong>`);
   }
 
   maths.appendChild(workingOut);
