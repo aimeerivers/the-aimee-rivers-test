@@ -1,4 +1,5 @@
 body {
+  background-color: ghostwhite;
   font-family: Arial, Helvetica, sans-serif;
   padding: 1em;
 }
@@ -10,10 +11,6 @@ blockquote {
   font-weight: bolder;
   margin: 1em;
   padding: 0.5em 1em;
-}
-
-#maths {
-  font-family: "Kalam", serif;
 }
 
 table {
@@ -47,8 +44,9 @@ strong {
   border: 1px solid #CCC;
   box-shadow: 0 1em 1em #CCC;
   display: inline-block;
+  font-family: "Kalam", serif;
   margin: 1em auto;
-  padding: 0.5em;
+  padding: 0 1em;
 }
 
 #maths p {
