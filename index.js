@@ -6,44 +6,38 @@ numberField.value = randomMultiplier * 25561;
 function calculate() {
   maths.innerHTML = '';
 
+  let workingOut = document.createElement("table");
+
   let startingNumber = numberField.value;
 
   let number = startingNumber.toString();
   let length = number.length;
 
   while (length >= 11) {
-    writeLine(maths, "Chop off the head")
+    addRowToTable(workingOut, "Take the 10,000,000,000s, multiply by 19, and add to the rest.");
     let head = number.slice(0, length - 10);
     let tail = number.slice(length - 10);
-    writeLine(maths, `${head} | ${tail}`);
 
     let toAdd = (Number(head) * 19);
-
-    writeLine(maths, tail);
-    writeLine(maths, `+ ${toAdd}`);
-
     number = (Number(tail) + toAdd).toString();
     length = number.length;
 
-    writeLine(maths, `= ${number}`);
+    addRowToTable(workingOut, `<s>${head}</s> | ${tail}<br>+ ${toAdd}<br>= ${number}`, `${head}<br>x 19<br>= ${toAdd}`);
   }
 
   while (length > 5) {
-    writeLine(maths, "Chop off the tail");
+    addRowToTable(workingOut, "Multiply the units by 2556 and subtract.");
     let head = number.slice(0, length - 1);
     let tail = number.slice(length - 1);
-    writeLine(maths, `${head} | ${tail}`);
 
     let toSubtract = (Number(tail) * 2556);
-
-    writeLine(maths, head);
-    writeLine(maths, `- ${toSubtract}`);
-
     number = (Number(head) - toSubtract).toString();
     length = number.length;
 
-    writeLine(maths, `= ${number}`);
+    addRowToTable(workingOut, `${head} | <s>${tail}</s><br>- ${toSubtract}<br>= ${number}`, `${tail}<br>x 2556<br>= ${toSubtract}`);
   }
+
+  maths.appendChild(workingOut);
 
   let result = (number % 25561 === 0 ? "is" : "is not");
   writeLine(maths, `${number} ${result} divisible by 25561, therefore ${startingNumber} ${result} divisible by 25561.`);
@@ -51,8 +45,22 @@ function calculate() {
 
 calculate();
 
+function addRowToTable(table, ...cells) {
+  let row = document.createElement("tr");
+  for (let cell of cells) {
+    let td = document.createElement("td");
+    td.innerHTML = cell;
+    row.appendChild(td);
+  }
+  if (cells.length === 1) {
+    row.firstChild.colSpan = 2;
+  }
+  table.appendChild(row);
+}
+
 function writeLine(parent, text) {
   let p = document.createElement("p");
+  p.style.fontWeight = "bold";
   p.innerText = text;
   parent.appendChild(p);
 }

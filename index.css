@@ -1,0 +1,10 @@
+td {
+  text-align: right;
+}
+
+td[colspan="2"] {
+  font-weight: bold;
+  padding-bottom: 1em;
+  padding-top: 2em;
+  text-align: left;
+}
