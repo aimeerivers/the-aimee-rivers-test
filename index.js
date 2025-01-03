@@ -40,7 +40,15 @@ function calculate() {
   maths.appendChild(workingOut);
 
   let result = (number % 25561 === 0 ? "is" : "is not");
-  writeLine(maths, `${number} ${result} divisible by 25561, therefore<br>${startingNumber} ${result} divisible by 25561.`);
+  let resultText = `${number} ${result} divisible by 25561, therefore<br>${startingNumber} ${result} divisible by 25561.`;
+  let p = document.createElement("p");
+  if (result === "is") {
+    p.classList.add("yep");
+  } else {
+    p.classList.add("nah");
+  }
+  p.innerHTML = resultText;
+  maths.appendChild(p);
 }
 
 calculate();
@@ -56,11 +64,4 @@ function addRowToTable(table, ...cells) {
     row.firstChild.colSpan = 2;
   }
   table.appendChild(row);
-}
-
-function writeLine(parent, text) {
-  let p = document.createElement("p");
-  p.style.fontWeight = "bold";
-  p.innerHTML = text;
-  parent.appendChild(p);
 }
