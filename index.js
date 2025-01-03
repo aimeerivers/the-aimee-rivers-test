@@ -22,7 +22,7 @@ function calculate() {
     number = (Number(tail) + toAdd).toString();
     length = number.length;
 
-    addRowToTable(workingOut, `<s>${head}</s> | ${tail}<br>+ ${toAdd}<br>= ${number}`, `${head}<br>x 19<br>= ${toAdd}`);
+    addRowToTable(workingOut, `${head}<br>x 19<br><strong>${toAdd}</strong>`, `${tail}<br>+ ${toAdd}<br><strong>${number}</strong>`);
   }
 
   while (length > 5) {
@@ -34,13 +34,13 @@ function calculate() {
     number = (Number(head) - toSubtract).toString();
     length = number.length;
 
-    addRowToTable(workingOut, `${head} | <s>${tail}</s><br>- ${toSubtract}<br>= ${number}`, `${tail}<br>x 2556<br>= ${toSubtract}`);
+    addRowToTable(workingOut, `${tail}<br>x 2556<br><strong>${toSubtract}</strong>`, `${head}<br>- ${toSubtract}<br><strong>${number}</strong>`);
   }
 
   maths.appendChild(workingOut);
 
   let result = (number % 25561 === 0 ? "is" : "is not");
-  writeLine(maths, `${number} ${result} divisible by 25561, therefore ${startingNumber} ${result} divisible by 25561.`);
+  writeLine(maths, `${number} ${result} divisible by 25561, therefore<br>${startingNumber} ${result} divisible by 25561.`);
 }
 
 calculate();
@@ -61,6 +61,6 @@ function addRowToTable(table, ...cells) {
 function writeLine(parent, text) {
   let p = document.createElement("p");
   p.style.fontWeight = "bold";
-  p.innerText = text;
+  p.innerHTML = text;
   parent.appendChild(p);
 }

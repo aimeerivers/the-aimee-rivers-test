@@ -1,10 +1,58 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+blockquote {
+  background-color: #CCC;
+  border-left: 0.5em solid #AAA;
+  display: inline-block;
+  font-weight: bolder;
+  margin: 1em;
+  padding: 0.5em 1em;
+}
+
+#maths {
+  font-family: "Kalam", serif;
+}
+
+table {
+  border-collapse: collapse;
+}
+
 td {
+  padding: 0.5em;
   text-align: right;
 }
 
 td[colspan="2"] {
+  color: mediumblue;
   font-weight: bold;
-  padding-bottom: 1em;
-  padding-top: 2em;
+  padding-bottom: 0;
+  padding-top: 1.5em;
   text-align: left;
+}
+
+strong {
+  border-top: 1px solid black;
+}
+
+#maths {
+  background-color: #F8F8F8;
+  background-image:
+    linear-gradient(90deg, #EEE 1px, transparent 1px),
+    linear-gradient(#EEE 1px, transparent 1px);
+  background-size: 1.5em 1.5em;
+  border-radius: 1em;
+  border: 1px solid #CCC;
+  box-shadow: 0 1em 1em #CCC;
+  display: inline-block;
+  margin: 1em auto;
+  padding: 0.5em;
+}
+
+#maths p {
+  color: mediumblue;
+  font-size: 1.3em;
+  padding: 0.5em;
+  text-align: center;
 }
